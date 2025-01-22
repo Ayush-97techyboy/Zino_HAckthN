@@ -1,0 +1,227 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+/* Header styles */
+.header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header button {
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.header button:hover {
+  background-color: #2980b9;
+}
+
+/* Main content layout */
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  background-color: #fff;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-block-btn {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-block-btn:hover {
+  background-color: #27ae60;
+}
+
+/* Tree view styles */
+.tree-view {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.block-item {
+  margin-bottom: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+}
+
+.block-header:hover {
+  background-color: #e9ecef;
+}
+
+.block-actions button {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.block-actions button:hover {
+  background-color: #5a6268;
+}
+
+.block-children {
+  padding: 0.5rem;
+  padding-left: 1rem;
+  background-color: #fff;
+}
+
+.child-item {
+  padding: 0.25rem;
+  margin: 0.25rem 0;
+  background-color: #f8f9fa;
+  border-radius: 2px;
+  font-size: 0.9rem;
+}
+
+/* Canvas styles */
+.canvas {
+  flex: 1;
+  position: relative;
+  background-color: white;
+  width: 1000px;
+  height: 800px;
+  margin: 1rem;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Block styles */
+.block {
+  border: 2px solid #3498db;
+  background-color: rgba(52, 152, 219, 0.1);
+  cursor: move;
+  border-radius: 4px;
+}
+
+.block.selected {
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.3);
+}
+
+/* Child element styles */
+.child-element {
+  cursor: move;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  user-select: none;
+}
+
+.child-element.text {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+/* Resize handle */
+.resize-handle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #666;
+  cursor: se-resize;
+  border-radius: 0 0 2px 0;
+}
+
+/* JSON modal */
+.json-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.json-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  max-height: 80%;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.json-content h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.json-scroll {
+  overflow: auto;
+  max-height: 400px;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.json-content pre {
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #2c3e50;
+}
